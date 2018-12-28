@@ -1,0 +1,8 @@
+# Jetbrains
+.idea/
+
+# NodeJS
+node_modules/
+
+# Mac 
+.DS_STORE
