@@ -1,0 +1,94 @@
+@mixin hn() {
+  margin: 0;
+  text-rendering: optimizeLegibility;
+
+  a {
+    color: inherit;
+  }
+
+  strong,
+  em {
+    font-weight: 900;
+  }
+}
+
+@mixin h1() {
+  @include hn();
+  font-family: 'Inter UI', sans-serif;
+  margin: 0;
+  font-size: 44px;
+  line-height: 50px;
+  font-weight: 500;
+
+  @include breakpoint($large) {
+    font-size: 92px;
+    line-height: 100px;
+  }
+}
+
+@mixin h2() {
+  @include hn();
+  font-family: 'Inter UI', sans-serif;
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 500;
+  color: white;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin h3() {
+  @include hn();
+  font-family: 'Inter UI', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 32px;
+  color: white;
+}
+
+@mixin h4() {
+  @include hn();
+  font-family: 'Inter UI', sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 30px;
+  color: white;
+}
+
+@mixin h5() {
+  @include hn();
+  font-family: 'Inter UI', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 26px;
+  color: white;
+}
+
+h1,
+.h1 {
+  @include h1();
+}
+
+h2,
+.h2 {
+  @include h2();
+}
+
+h3,
+.h3 {
+  @include h3();
+}
+
+h4,
+.h4 {
+  @include h4();
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+  @include h5();
+}

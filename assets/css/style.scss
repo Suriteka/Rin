@@ -1,4 +1,24 @@
+/* Some imports */
+@import "../../node_modules/normalize-scss/sass/normalize";
+
+/* Base */
+@import "base/variable";
+@import "base/media-queries";
+@import "base/typography";
+@import "base/heading";
+@import "base/text";
+@import "base/grid";
+
+/* Components */
+@import "component/header";
+@import "component/article";
+
+/* Layouts */
+@import "layout/home";
+
 body {
-  background-color: black;
+  @include grid();
+  margin: 0;
+  background-color: #222;
   color: white;
 }

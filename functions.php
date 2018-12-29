@@ -44,8 +44,15 @@ class StarterSite extends Timber\Site {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-		parent::__construct();
+        add_filter( 'excerpt_more', array( $this, 'disable_more_link' ) );
+        parent::__construct();
 	}
+
+    /** Remove the Read More link in article previews */
+    function disable_more_link() {
+        return ' ';
+    }
+
 	/** This is where you can register custom post types. */
 	public function register_post_types() {
 
@@ -60,7 +67,6 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo'] = 'bar';
 		$context['stuff'] = 'I am a value set in your functions.php file';
 		$context['notes'] = 'These values are available everytime you call Timber::get_context();';
 		$context['menu'] = new Timber\Menu();
