@@ -2,6 +2,6 @@
 	{% block content %}
 		<h2 class="article__title"><a href="{{post.link}}">{{post.title}}</a></h2>
 		<date class="article__date">{{ post.date }}</date>
-		<p class="article__preview">{{post.preview}}</p>
+		<p class="article__preview">{{ post.preview.read_more('') }}</p>
 	{% endblock %}
 </article>
