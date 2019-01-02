@@ -48,6 +48,7 @@
     "translate": "gulp translate"
   },
   "dependencies": {
+    "@bazooka/material-icons": "git+ssh://git@gitlab.com/bazooka/material-icons.git",
     "normalize-scss": "^7.0.1"
   }
 }

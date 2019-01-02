@@ -24,8 +24,11 @@ small,
   line-height: 24px;
 }
 
-.p {
+.p,
+.a {
   &--highlight {
+    text-decoration: none;
+    font-family: "Inter UI", sans-serif;
     font-size: 13px;
     line-height: 22px;
     letter-spacing: 0.2em;

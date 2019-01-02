@@ -1,4 +1,8 @@
+@import "../../../node_modules/@bazooka/material-icons/material-icons";
+
 .article {
+  display: flex;
+  flex-direction: column;
 
   &--tease {
     padding: 20px 10px;
@@ -18,6 +22,18 @@
     .article__preview {
       font-size: 16px;
       font-weight: 300;
+    }
+
+    .article__readmore {
+      display: flex;
+      align-items: center;
+      align-self: flex-end;
+
+      &::before {
+        @include materialIcons('arrow_forward');
+        font-size: 16px;
+        margin-right: 15px;
+      }
     }
   }
 }
