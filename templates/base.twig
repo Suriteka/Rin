@@ -9,16 +9,14 @@
 	<body>
 		{% include 'partial/header.twig' %}
 
+		<nav>
+			{{ function('get_search_form') }}
+		</nav>
+
 		<main id="content" role="main" class="content-wrapper">
 			{% block content %}
 				Sorry, no content
 			{% endblock %}
-            {{ function('get_search_form') }}
-			{% if sidebar %}
-				<aside class="layout-sidebar">
-					{{sidebar}}
-				</aside>
-			{% endif %}
 		</main>
 
 		{% block footer %}

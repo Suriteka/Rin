@@ -12,6 +12,11 @@ footer {
 main {
   @include grid();
 
+  @include breakpoint($large) {
+    margin: 0;
+    padding: 0 50px 0 100px;
+  }
+
   h1 {
     grid-column: 1 / -1;
 
@@ -24,10 +29,11 @@ main {
   p,
   .article {
     grid-column: 1 / -1;
-
-    @include breakpoint($large) {
-      grid-column: 1 / span 1;
-    }
   }
 
+  .article {
+    @include breakpoint($large) {
+      grid-column: 1 / span 2;
+    }
+  }
 }

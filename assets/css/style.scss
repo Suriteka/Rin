@@ -10,6 +10,7 @@
 @import "base/grid";
 
 /* Components */
+@import "component/nav";
 @import "component/header";
 @import "component/article";
 
@@ -21,4 +22,17 @@ body {
   margin: 0;
   background-color: #222;
   color: white;
+
+  @include breakpoint($medium) {
+    display: grid;
+    grid-template-columns: 1069fr 272fr;
+
+    * {
+      grid-column: 1 / span 1;
+    }
+
+    nav {
+      grid-column: 2 / -1;
+    }
+  }
 }
