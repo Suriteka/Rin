@@ -2,7 +2,6 @@ header,
 main,
 footer {
   grid-column: 1 / -1;
-  padding: 0 20px;
 
   @include breakpoint($large) {
     padding: 0 100px;
@@ -15,30 +14,8 @@ nav {
 }
 
 main {
-  @include grid();
-
   @include breakpoint($large) {
     margin: 0;
     padding: 0 100px;
-  }
-
-  h1 {
-    grid-column: 1 / -1;
-
-    @include breakpoint($large) {
-      grid-column: 1 / span 2;
-      margin-bottom: 100px;
-    }
-  }
-
-  p,
-  .article {
-    grid-column: 1 / -1;
-  }
-
-  .article {
-    @include breakpoint($large) {
-      grid-column: 1 / span 2;
-    }
   }
 }

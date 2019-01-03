@@ -1,10 +1,30 @@
 @import "../../../node_modules/@bazooka/material-icons/material-icons";
 
 .article {
-  display: flex;
-  flex-direction: column;
+  @include grid();
 
+  &__title {
+    grid-column: 1 / -1;
+    padding: 0 20px;
+
+    @include breakpoint($medium) {
+      grid-column: 1 / span 2;
+    }
+  }
+
+  &__content {
+    grid-column: 1 / -1;
+    padding: 0 20px;
+
+    @include breakpoint($medium) {
+      grid-column: 1 / span 1;
+    }
+  }
+
+  /* On homepage */
   &--tease {
+    display: flex;
+    flex-direction: column;
     padding: 20px 10px;
     margin-bottom: 30px;
     background-color: #303030;
