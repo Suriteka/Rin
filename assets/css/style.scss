@@ -1,6 +1,8 @@
 /* Some imports */
 @import "../../node_modules/normalize-scss/sass/normalize";
 
+$color-primary: #F6B755;
+
 /* Base */
 @import "base/variable";
 @import "base/media-queries";
