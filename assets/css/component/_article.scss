@@ -1,5 +1,3 @@
-@import "../../../node_modules/@bazooka/material-icons/material-icons";
-
 .article {
   @include grid();
 
@@ -50,7 +48,6 @@
       align-self: flex-end;
 
       &::before {
-        @include materialIcons('arrow_forward');
         font-size: 16px;
         margin-right: 15px;
       }
