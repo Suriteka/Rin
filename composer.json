@@ -1,12 +1,12 @@
 {
-  "name": "upstatement/timber-starter-theme",
-  "description": "Starter theme to build a Timber theme",
+  "name": "Rin",
+  "description": "WordPress Theme — Rin 💎",
   "type":"wordpress-theme",
   "minimum-stability" : "stable",
   "authors": [
       {
-          "name": "jarednova",
-          "email": "jared@upstatement.com"
+          "name": "Suriteka",
+          "email": "suriteka@gmail.com"
       }
   ],
   "repositories": [
