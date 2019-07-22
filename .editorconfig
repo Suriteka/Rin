@@ -1,18 +1,46 @@
-# WordPress Coding Standards
-# https://make.wordpress.org/core/handbook/coding-standards/
+# Fantassin Editor Config
+# http://editorconfig.org
 
+# Project Root, Don't Look Any Higher
 root = true
 
+# Default Settings For All Files
 [*]
 charset = utf-8
 end_of_line = lf
+indent_style = space # Spaces VS Tabs
+indent_size = 2 # Two Spaces Wide
 insert_final_newline = true
 trim_trailing_whitespace = true
-indent_style = tab
 
-[{package.json,*.yml}]
+# JS, Vue and TS
+[*.{js,vue,ts}]
 indent_style = space
 indent_size = 2
 
-[{*.txt,wp-config-sample.php}]
-end_of_line = crlf
+# JSON Settings
+[*.{json}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = true
+
+# Markdown & YAML Settings
+[*.{md,yml}]
+indent_style = space
+indent_size = 2
+trim_trailing_whitespace = false
+
+# Ruby Settings
+[*.{rb,erb}]
+indent_style = space
+indent_size = 2
+
+# Python Settings
+[*.{py}]
+indent_style = space
+indent_size = 4
+
+# PHP Settings (PSR2 Style)
+[*.{php}]
+indent_style = space
+indent_size = 4
