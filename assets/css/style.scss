@@ -20,6 +20,7 @@
 
 /* Layouts */
 @import "layout/home";
+@import "layout/article";
 
 * {
   box-sizing: border-box;
@@ -27,6 +28,7 @@
 
 body {
   @include grid();
+  position: relative;
   margin: 0;
   background-color: $black;
   color: white;
