@@ -1,147 +1,115 @@
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 400; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-Regular.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-Regular.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 400; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-Italic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-Italic.woff") format("woff");
-}
+/* Eien : Typography */
 
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 500; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-Medium.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-Medium.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 500; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-MediumItalic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-MediumItalic.woff") format("woff");
-}
+@mixin hn() {
+  font-family: $font-primary;
+  margin: 0;
+  text-rendering: optimizeLegibility;
 
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 600; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-SemiBold.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-SemiBold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 600; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-SemiBoldItalic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-SemiBoldItalic.woff") format("woff");
-}
+  a {
+    color: inherit;
+  }
 
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 700; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-Bold.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-Bold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 700; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-BoldItalic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-BoldItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 800; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-ExtraBold.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-ExtraBold.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 800; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-ExtraBoldItalic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-ExtraBoldItalic.woff") format("woff");
-}
-
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  normal;
-  font-weight: 900; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-Black.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-Black.woff") format("woff");
-}
-@font-face {
-  font-family: 'Inter UI';
-  font-style:  italic;
-  font-weight: 900; font-display: swap;
-  src: url("../../fonts/InterUI/Inter-UI-BlackItalic.woff2") format("woff2"),
-  url("../../fonts/InterUI/Inter-UI-BlackItalic.woff") format("woff");
-}
-
-/* --------------------------------------------------------------------------
-Single variable font.
-
-Note that you may want to do something like this to make sure you're serving
-constant fonts to older browsers:
-html {
-  font-family: 'Inter UI', sans-serif;
-}
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: 'Inter UI var', sans-serif;
+  strong,
+  em {
+    font-weight: 900;
   }
 }
 
-BUGS:
-- Safari 12.0 will default to italic instead of regular when font-weight
-  is provided in a @font-face declaration.
-  Workaround: Use "../../fonts/InterUI/Inter UI var alt" for Safari, or explicitly set
-  `font-variation-settings:"slnt" DEGREE`.
-*/
-@font-face {
-  font-family: 'Inter UI var';
-  font-weight: 400 900; font-display: swap;
-  font-style: oblique 0deg 10deg;
-  src: url("../../fonts/InterUI/Inter-UI.var.woff2") format("woff2-variations"),
-  url("../../fonts/InterUI/Inter-UI.var.woff2") format("woff2");
-}
+@mixin h1() {
+  @include hn();
+  margin: 0;
+  font-size: rem-calc(42);
+  font-weight: 600;
+  line-height: rem-calc(50);
+  letter-spacing: 1.5;
 
-/* --------------------------------------------------------------------------
-
-"../../fonts/InterUI/Inter UI var alt" is recommended for Safari and Edge, for reliable italics.
-
-@supports (font-variation-settings: normal) {
-  html {
-    font-family: 'Inter UI var alt', sans-serif;
+  @include breakpoint($large) {
+    font-size: rem-calc(92);
+    line-height: rem-calc(115);
   }
 }
 
-*/
-@font-face {
-  font-family: 'Inter UI var alt';
-  font-weight: 400 900; font-display: swap;
-  font-style: normal;
-  font-named-instance: 'Regular';
-  src: url("../../fonts/InterUI/Inter-UI-upright.var.woff2") format("woff2 supports variations(gvar)"),
-  url("../../fonts/InterUI/Inter-UI-upright.var.woff2") format("woff2-variations"),
-  url("../../fonts/InterUI/Inter-UI-upright.var.woff2") format("woff2");
+@mixin h2() {
+  @include hn();
+  font-size: rem-calc(24);
+  line-height: rem-calc(30);
+  font-weight: 500;
+
+  @include breakpoint($large) {
+    font-size: rem-calc(40);
+    line-height: rem-calc(50);
+  }
 }
-@font-face {
-  font-family: 'Inter UI var alt';
-  font-weight: 400 900; font-display: swap;
-  font-style: italic;
-  font-named-instance: 'Italic';
-  src: url("../../fonts/InterUI/Inter-UI-italic.var.woff2") format("woff2 supports variations(gvar)"),
-  url("../../fonts/InterUI/Inter-UI-italic.var.woff2") format("woff2-variations"),
-  url("../../fonts/InterUI/Inter-UI-italic.var.woff2") format("woff2");
+
+@mixin h3() {
+  @include hn();
+  font-size: rem-calc(17);
+  line-height: rem-calc(19);
+  letter-spacing: 9%;
+  font-weight: 400;
+  
+  @include breakpoint($large) {
+    font-size: rem-calc(24);
+    line-height: rem-calc(30);
+  }
+}
+
+@mixin h4() {
+  @include hn();
+  font-size: rem-calc(17);
+  line-height: rem-calc(20);
+  font-weight: 400;
+  
+  @include breakpoint($large) {
+    font-size: rem-calc(22);
+    line-height: rem-calc(26);
+  }
+}
+
+@mixin h5() {
+  @include hn();
+  font-size: rem-calc(14);
+  line-height: rem-calc(20);
+  letter-spacing: 7%;
+  font-weight: 500;
+
+  
+  @include breakpoint($large) {
+    font-size: rem-calc(18);
+    line-height: rem-calc(24);
+  }
+}
+
+@mixin h6() {
+  @include hn();
+  font-size: rem-calc(14);
+  line-height: rem-calc(20);
+  letter-spacing: 7%;
+  font-weight: 400;
+  text-transform: uppercase;
+
+  
+  @include breakpoint($large) {
+    font-size: rem-calc(18);
+    line-height: rem-calc(26);
+  }
+}
+
+@mixin p() {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: rem-calc(16);
+  line-height: rem-calc(21);
+}
+
+@mixin small() {
+  @include p();
+  font-size: rem-calc(14);
+  line-height: rem-calc(19);
+}
+
+@mixin large() {
+  @include p();
+  font-size: rem-calc(18);
+  line-height: rem-calc(26);
 }

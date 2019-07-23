@@ -1,0 +1,5 @@
+$spacing: 15px;
+
+@function spacer($multiplier: 1) {
+    @return $spacing * $multiplier;
+}

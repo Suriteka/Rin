@@ -3,6 +3,6 @@
 		<h2 class="article__title"><a href="{{post.link}}">{{post.title}}</a></h2>
 		<date class="article__date">{{ post.date }}</date>
 		<p class="article__preview">{{ post.preview.read_more('') }}</p>
-		<a class="article__readmore a--highlight" href="{{ post.link }}">Lire la suite</a>
+		<a class="article__button" href="{{ post.link }}">Lire la suite</a>
 	{% endblock %}
 </article>

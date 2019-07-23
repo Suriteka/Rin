@@ -1,0 +1,118 @@
+/* Headings */
+h1,
+.h1 {
+  @include h1();
+}
+
+h2,
+.h2 {
+  @include h2();
+}
+
+h3,
+.h3 {
+  @include h3();
+}
+
+h4,
+.h4 {
+  @include h4();
+}
+
+h5,
+h6,
+.h5,
+.h6 {
+  @include h5();
+}
+
+/* Paragraph */
+
+p,
+.p {
+  @include p();
+}
+
+small,
+.small,
+.p--small {
+  @include small();
+}
+
+.large,
+.p--large {
+  @include large();
+}
+
+/* Date */
+date {
+  @include p();
+  font-size: 16px;
+  line-height: 22px;
+}
+
+br {
+  margin-bottom: 0;
+}
+
+/* Enable small caps if available & fix letter spacing */
+abbr {
+  letter-spacing: 0em;
+}
+
+/* Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
+abbr[title],
+acronym[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+/* Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
+b,
+strong {
+  font-weight: 500;
+}
+
+/* Address styling not present in Safari and Chrome. */
+dfn {
+  font-style: italic;
+}
+
+/* Prevent `em` and `i` affecting `line-height` in all browsers. */
+em,
+i {
+  position: relative;
+  vertical-align: baseline;
+  line-height: 0;
+}
+
+/* Address styling not present in IE 8/9. */
+mark {
+  background-color: goldenrod;
+  color: black;
+}
+
+/* Prevent `sub` and `sup` affecting `line-height` in all browsers. */
+sub,
+sup {
+  position: relative;
+  vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+br{
+  display: block;
+  width: 0;
+  height: 0;
+  color: transparent;
+  font-size: 0;
+}

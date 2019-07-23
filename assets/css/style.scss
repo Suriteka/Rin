@@ -1,17 +1,20 @@
-/* Some imports */
+/* Imports */
 @import "./../../node_modules/normalize-scss/sass/normalize";
 
-$color-primary: #F6B755;
-
 /* Base */
+@import "base/color";
 @import "base/variable";
 @import "base/media-queries";
+@import "base/rem-calc";
+@import "base/font";
 @import "base/typography";
-@import "base/heading";
 @import "base/text";
 @import "base/grid";
+@import "base/spacer";
 
 /* Components */
+@import "component/text";
+@import "component/card";
 @import "component/nav";
 @import "component/header";
 @import "component/article";
@@ -21,20 +24,6 @@ $color-primary: #F6B755;
 
 body {
   @include grid();
-  margin: 0;
-  background-color: #222;
+  background-color: $black;
   color: white;
-
-  @include breakpoint($medium) {
-    display: grid;
-    grid-template-columns: 1069fr 272fr;
-
-    * {
-      grid-column: 1 / span 1;
-    }
-
-    nav {
-      grid-column: 2 / -1;
-    }
-  }
 }
