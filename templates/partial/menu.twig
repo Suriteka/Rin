@@ -1,0 +1,63 @@
+<aside class="aside">
+
+	<form class="search" role="search" method="get" id="searchform" action="{{site.url}}">
+		<input class="search__input" type="text" value="" name="s" id="s" placeholder="{{ __('Search', 'timber-foundation')|e }}">
+		<input class="search__button" type="submit" id="searchsubmit" value="{{ __('Search', 'timber-foundation')|e }}" class="button postfix">
+	</form>
+
+	
+	<nav class="menu">
+		<span class="menu__title">Catégories</span>
+
+		<ul class="menu__items">
+			<li class="menu__item">Maths</li>
+			<li class="menu__item">Français</li>
+			<li class="menu__item">Anglais</li>
+			<li class="menu__item">Japonais</li>
+		</ul>
+	</nav>
+
+		<nav class="menu">
+		<span class="menu__title">Catégories</span>
+
+		<ul class="menu__items">
+			<li class="menu__item">Maths</li>
+			<li class="menu__item">Français</li>
+			<li class="menu__item">Anglais</li>
+			<li class="menu__item">Japonais</li>
+		</ul>
+	</nav>
+
+		<nav class="menu">
+		<span class="menu__title">Catégories</span>
+
+		<ul class="menu__items">
+			<li class="menu__item">Maths</li>
+			<li class="menu__item">Français</li>
+			<li class="menu__item">Anglais</li>
+			<li class="menu__item">Japonais</li>
+		</ul>
+	</nav>
+		<nav class="menu">
+		<span class="menu__title">Catégories</span>
+
+		<ul class="menu__items">
+			<li class="menu__item">Maths</li>
+			<li class="menu__item">Français</li>
+			<li class="menu__item">Anglais</li>
+			<li class="menu__item">Japonais</li>
+		</ul>
+	</nav>
+</aside>
+
+
+{% if menu %}
+	<ul>
+	{% for item in menu %}
+		<li class="{{ item.classes | join(' ') }}">
+			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% include "menu.twig" with {'menu': item.get_children} %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}

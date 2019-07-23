@@ -8,7 +8,6 @@
 @import "base/rem-calc";
 @import "base/font";
 @import "base/typography";
-@import "base/text";
 @import "base/grid";
 @import "base/spacer";
 
@@ -22,8 +21,17 @@
 /* Layouts */
 @import "layout/home";
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   @include grid();
+  margin: 0;
   background-color: $black;
   color: white;
+
+  @include breakpoint($large) {
+    width: 80vw;
+  }
 }

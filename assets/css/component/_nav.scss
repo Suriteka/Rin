@@ -1,4 +1,72 @@
-nav {
-  padding: 30px;
-  border-left: 1px solid $color-primary;
+.aside {
+  width: 100%;
+  overflow-y: scroll;
+
+  @include breakpoint($large) {
+    position: fixed;
+    width: calc(20vw - 17px); // Remove size of scrollbar
+    height: 100vh;
+    top: 0;
+    right: 0;
+    border-left: 1px solid $color-primary;
+    padding-bottom: 100px;
+
+    &::after {
+      content: '';
+      display: block;
+      position: fixed;
+      bottom: 0;
+      height: 100px;
+      width: 100%;
+      background: linear-gradient(to bottom, rgba($black, 0%) 0%, $black 60%);
+      pointer-events: none;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+  }
+
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE 10+ */
+}
+
+.search {
+  padding: spacer();
+  border-bottom: 1px solid $color-primary;
+
+  &__input {
+    @include p-highlight();
+    border: none;
+    color: $color-primary;
+    background-color: transparent;
+
+    &::placeholder {
+      color: $color-primary;
+    }
+  }
+}
+
+.menu {
+  margin-top: spacer(3);
+
+  &__title {
+    @include p-highlight();
+    display: block;
+    color: $color-primary;
+    border-bottom: 1px solid $color-primary;
+    padding: spacer();
+  }
+
+  &__items {
+    @include p-highlight();
+    color: rgba($color-primary, 0.60);
+    padding-left: spacer();
+  }
+
+  &__item {
+    list-style: none;
+    margin-bottom: spacer();
+  }
 }
