@@ -5,6 +5,7 @@
 @import "base/color";
 @import "base/variable";
 @import "base/media-queries";
+@import "base/easing";
 @import "base/rem-calc";
 @import "base/font";
 @import "base/typography";
@@ -12,6 +13,7 @@
 @import "base/spacer";
 @import "base/material-icons";
 @import "base/focus";
+@import "base/input";
 
 /* Components */
 @import "component/text";

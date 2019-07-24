@@ -15,6 +15,8 @@
 
 $context = Timber::get_context();
 $context['posts'] = new Timber\PostQuery();
+$context['categories'] = Timber::get_terms('category');
+
 $templates = array( 'index.twig' );
 if ( is_home() ) {
 	array_unshift( $templates, 'front-page.twig', 'home.twig' );

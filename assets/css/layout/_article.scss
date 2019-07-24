@@ -1,19 +1,28 @@
 .article {
+    margin-top: spacer(12);
+
+    @include breakpoint($large) {
+        margin-top: spacer(20);
+    }
 
     &__picture {
-        max-height: spacer(23);
+        height: spacer(15);
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         object-fit: cover;
         z-index: -1;
+
+        @include breakpoint($large) {
+            height: spacer(23);
+        }
     }
 
     &__title {
         grid-column: 1 / -1;
 
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             grid-column: 1 / span 2;
         }
     }
@@ -23,7 +32,7 @@
         max-width: 600px;
         margin-top: spacer(3);
 
-        @include breakpoint($medium) {
+        @include breakpoint($large) {
             grid-column: 1 / span 1;
         }
     }

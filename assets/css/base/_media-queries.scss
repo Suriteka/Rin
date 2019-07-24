@@ -16,6 +16,10 @@ $breakpoints: (small: $small, medium: $medium, large: $large, xlarge: $xlarge) !
     @media screen and (min-width: $value){
       @content;
     }
+  } @elseif( $value < 0 ) {
+    @media screen and (max-width: $value) {
+      @content;
+    }
   } @else {
     @content;
   }

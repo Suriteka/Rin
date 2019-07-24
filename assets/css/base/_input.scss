@@ -1,0 +1,24 @@
+@mixin input-focus() {
+    text-decoration: none;
+    background: linear-gradient(to top, rgba($color-primary, 1) 0%, rgba($color-primary, 1) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    transition: background-size 300ms $easeOutCirc;
+    background-size: 0% 100%;
+    color: #000;
+
+    &:active,
+    &:focus {
+        outline: none;
+        background-size: 100% 100%;
+    }
+}
+
+input[type="text"] {
+    @include input-focus();
+    color: $color-primary;
+
+    &:active,
+    &:focus {
+        color: $color-primary;
+    }
+}
+

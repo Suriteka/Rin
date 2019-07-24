@@ -4,8 +4,11 @@
 	<article class="article">
 		<img class="article__picture" src="{{ post.thumbnail.src|resize(1200, 300) }}">
 		<h1 class="article__title">{{ post.title }}</h1>
-		<div class="article__content">
+
+		{% include 'partial/menu.twig' %}
+		
+		<section class="article__content">
 			{{post.content}}
-		</div>
+		</section>
 	</article>
 {% endblock %}

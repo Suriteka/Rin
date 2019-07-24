@@ -1,0 +1,8 @@
+{% block content %}
+	<article class="tease">
+		<h2 class="tease__title"><a href="{{ post.link }}">{{ post.title }}</a></h2>
+		<date class="tease__date">{{ post.date }}</date>
+		<p class="tease__preview">{{ post.preview.read_more('') }}</p>
+		<a class="tease__button" href="{{ post.link }}">Lire la suite</a>
+	</article>
+{% endblock %}
