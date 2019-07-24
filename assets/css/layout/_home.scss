@@ -9,7 +9,7 @@ footer {
 }
 
 .content {
-  padding: 0 20px;
+  padding: 0 spacer();
 
   @include breakpoint($large) {
     margin: 0;
@@ -17,6 +17,11 @@ footer {
   }
 
   &__title {
-    margin-bottom: spacer(10);
+    margin-bottom: spacer(3);
+
+    @include breakpoint($large) {
+      margin-bottom: spacer(10);
+    }
   }
+
 }

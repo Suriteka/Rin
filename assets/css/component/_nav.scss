@@ -1,6 +1,8 @@
 .aside {
-  width: 100%;
-  overflow-y: scroll;
+  grid-column: 1 / -1;
+  margin-left: spacer(-1);
+  margin-right: spacer(-1);
+  margin-bottom: spacer(3);
 
   @include breakpoint($large) {
     position: fixed;
@@ -9,6 +11,7 @@
     top: 0;
     right: 0;
     border-left: 1px solid $color-primary;
+    margin: 0;
     padding-bottom: 100px;
 
     &::after {
@@ -49,24 +52,56 @@
 }
 
 .menu {
-  margin-top: spacer(3);
+
+  @include breakpoint($large) {
+    margin-top: spacer(3);
+  }
 
   &__title {
     @include p-highlight();
-    display: block;
+    @include focus();
+    display: flex;
+    align-items: center;
     color: $color-primary;
     border-bottom: 1px solid $color-primary;
     padding: spacer();
+
+    &::after {
+      @include material-icons("arrow_downward");
+      transition: transform 300ms ease-out;
+      margin-left: spacer(1/2);
+    }
   }
 
   &__items {
     @include p-highlight();
     color: rgba($color-primary, 0.60);
     padding-left: spacer();
+    display: none;
+
+    @include breakpoint($large) {
+      display: initial;
+    }
   }
 
   &__item {
     list-style: none;
     margin-bottom: spacer();
   }
+
+  &.open .menu {
+    &__title {
+      &::after {
+        transform: rotate(-180deg);
+      }
+    }
+
+    &__items {
+      display: block;
+    }
+  }
+}
+
+a, input {
+  @include focus();
 }

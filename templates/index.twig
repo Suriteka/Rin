@@ -3,6 +3,8 @@
 {% block content %}
 	<h1 class="content__title">{{ site.name }}</h1>
 
+	{% include 'partial/menu.twig' %}
+
 	<p class="p--highlight">{{ __('Derniers articles', 'latest-articles') }}</p>
 	{% for post in posts %}
 		{% include ['', 'tease.twig'] %}
