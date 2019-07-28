@@ -1,11 +1,8 @@
 header,
 main,
 footer {
+  @include grid();
   grid-column: 1 / -1;
-
-  @include breakpoint($large) {
-    padding: 0 100px;
-  }
 }
 
 .content {
@@ -17,11 +14,27 @@ footer {
   }
 
   &__title {
+    grid-column: 1 / -1;
     margin-bottom: spacer(3);
 
     @include breakpoint($large) {
       margin-bottom: spacer(10);
     }
   }
+}
 
+.tease {
+  @include card();
+
+  grid-column: 1 / -1;
+
+  @include breakpoint($large) {
+    grid-column: 1 / span 3;
+  }
+}
+
+.p--highlight {
+  @include p-highlight();
+  grid-column: 1 / -1;
+  margin-bottom: spacer();
 }

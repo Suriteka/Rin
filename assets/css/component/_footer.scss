@@ -1,0 +1,20 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    margin-top: spacer(5);
+    padding: spacer(2) spacer(2);
+    border-top: 1px solid $color-primary;
+
+    @include breakpoint($large) {
+        padding: spacer(2) 100px;
+    }
+
+    &__title {
+        @include h1();
+    }
+
+    &__made {
+        @include small();
+        color: $gray-1;
+    }
+}

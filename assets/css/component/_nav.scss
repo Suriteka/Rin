@@ -69,7 +69,6 @@
 }
 
 .menu {
-
   @include breakpoint($large) {
     margin-top: spacer(3);
   }
@@ -82,6 +81,14 @@
     color: $color-primary;
     border-bottom: 1px solid $color-primary;
     padding: spacer();
+
+    &:focus,
+    &:active {
+      @include breakpoint($large) {
+        cursor: initial;
+        box-shadow: none;
+      }
+    }
 
     &::after {
       @include material-icons("arrow_downward");
@@ -101,7 +108,7 @@
     display: none;
 
     @include breakpoint($large) {
-      display: initial;
+      display: block;
     }
   }
 
@@ -114,19 +121,15 @@
       text-decoration: none;
     }
   }
+}
 
-  @include breakpoint($large * -1) {
-    &.open .menu {
-      &__title {
-        &::after {
-          transform: rotate(-180deg);
-        }
-      }
-  
-      &__items {
-        display: block;
-      }
-    }
+.menu.open .menu {
+  &__title::after {
+    transform: rotate(-180deg);
+  }
+
+  &__items {
+    display: block;
   }
 }
 

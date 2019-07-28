@@ -1,6 +1,7 @@
-%card {
+@mixin card() {
     display: flex;
     flex-direction: column;
+    position: relative;
     padding: spacer(2);
     margin-bottom: spacer(2);
     background-color: rgba($gray-1, 0.3);
@@ -8,16 +9,31 @@
     box-shadow: 0px 4px 4px rgba(#000, 0.25);
 
     @include breakpoint($large) {
-        padding: spacer() spacer(2);
+        padding: spacer(2) spacer(2);
     }
 
     &__title {
-        @include h4();
+        @include h2();
+
+        a {
+            text-decoration: none;
+
+            &::before {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+            }
+        }
     }
 
     &__date {
         margin-top: spacer();
         color: #6F6F6F;
+        text-transform: capitalize;
     }
 
     &__preview {
@@ -26,17 +42,8 @@
     }
 
     &__button {
-        display: flex;
-        align-items: center;
+        @include p-highlight();
+        margin-top: spacer();
         align-self: flex-end;
-
-        &::before {
-            font-size: 16px;
-            margin-right: 15px;
-        }
     }
-}
-
-.tease {
-    @extend %card;
 }

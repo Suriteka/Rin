@@ -1,4 +1,5 @@
 .article {
+    grid-column: 1/-1;
     margin-top: spacer(12);
 
     @include breakpoint($large) {
