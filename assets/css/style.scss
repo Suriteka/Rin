@@ -33,6 +33,7 @@
 
 body {
   @include grid();
+  --color-primary: $var-color-primary;
   position: relative;
   margin: 0;
   background-color: $black;

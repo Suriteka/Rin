@@ -1,6 +1,6 @@
 @mixin input-focus() {
     text-decoration: none;
-    background: linear-gradient(to top, rgba($color-primary, 1) 0%, rgba($color-primary, 1) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
+    background: linear-gradient(to top, rgba($var-color-primary, 1) 0%, rgba($var-color-primary, 1) 10%, transparent 10.01%) no-repeat left bottom / 0 100%;
     transition: background-size 300ms $easeOutCirc;
     background-size: 0% 100%;
     color: #000;
@@ -14,11 +14,11 @@
 
 input[type="text"] {
     @include input-focus();
-    color: $color-primary;
+    color: $var-color-primary;
 
     &:active,
     &:focus {
-        color: $color-primary;
+        color: $var-color-primary;
     }
 }
 

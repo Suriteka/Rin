@@ -6,11 +6,11 @@
 
   @include breakpoint($large) {
     position: fixed;
-    width: calc(20vw - 17px); // Remove size of scrollbar
+    width: 20vw;
     height: 100vh;
     top: 0;
     right: 0;
-    border-left: 1px solid $color-primary;
+    border-left: 1px solid $var-color-primary;
     margin: 0;
     padding-bottom: 100px;
 
@@ -40,18 +40,18 @@
   align-items: center;
   justify-content: space-between;
   padding: spacer();
-  border-bottom: 1px solid $color-primary;
+  border-bottom: 1px solid $var-color-primary;
 
   &__input {
     @include p-highlight();
     border: none;
-    color: $color-primary;
+    color: $var-color-primary;
     background-color: transparent;
     padding: spacer(1/5) 0;
     flex-grow: 1;
 
     &::placeholder {
-      color: $color-primary;
+      color: $var-color-primary;
     }
   }
 
@@ -63,7 +63,7 @@
 
     &::before {
       @include material-icons("search");
-      color: $color-primary;
+      color: $var-color-primary;
     }
   }
 }
@@ -78,8 +78,8 @@
     @include focus();
     display: flex;
     align-items: center;
-    color: $color-primary;
-    border-bottom: 1px solid $color-primary;
+    color: $var-color-primary;
+    border-bottom: 1px solid $var-color-primary;
     padding: spacer();
 
     &:focus,
@@ -103,7 +103,6 @@
 
   &__items {
     @include p-highlight();
-    color: rgba($color-primary, 0.60);
     padding-left: spacer();
     display: none;
 
@@ -115,6 +114,7 @@
   &__item {
     list-style: none;
     margin-bottom: spacer();
+    color: rgba($var-color-primary, 0.60);
 
     a {
       color: inherit;

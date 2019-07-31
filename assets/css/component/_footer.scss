@@ -3,7 +3,7 @@
     flex-direction: column;
     margin-top: spacer(5);
     padding: spacer(2) spacer(2);
-    border-top: 1px solid $color-primary;
+    border-top: 1px solid $var-color-primary;
 
     @include breakpoint($large) {
         padding: spacer(2) 100px;
@@ -16,5 +16,31 @@
     &__made {
         @include small();
         color: $gray-1;
+    }
+
+    &__social {
+        display: flex;
+        align-content: flex-start;
+        padding-left: 0;
+
+
+        li {
+            list-style-type: none;
+            margin: 0 spacer(1/4);
+
+            &::first-child {
+                margin-left: 0;
+            }
+
+            &::last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            @include p-highlight();
+            color: $gray-2;
+            text-decoration: none;
+        }
     }
 }
