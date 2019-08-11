@@ -28,6 +28,38 @@
         }
     }
 
+    &__date {
+        @include p-highlight();
+        display: block;
+        margin-bottom: spacer();
+        font-size: rem-calc(9);
+        line-height: rem-calc(13);
+
+        @include breakpoint($large) {
+            font-size: rem-calc(12);
+            line-height: rem-calc(16);
+        }
+
+        date {
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        &::before {
+            @include material-icons('access_time');
+            font-size: inherit;
+            line-height: inherit;
+            margin-right: spacer(1/2);
+        }
+
+        &--modified::before {
+            @include material-icons('update');
+            font-size: inherit;
+            line-height: inherit;
+            margin-right: spacer(1/2);
+        }
+    }
+
     &__content {
         @include grid();
         grid-column: 1 / -1;
