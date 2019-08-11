@@ -1,0 +1,9 @@
+.wp-block-button {
+
+
+    &__link {
+        @include p-highlight();
+        background-color: $var-color-primary;
+        transition: background-color 5s $easeOutQuart;
+    }
+}

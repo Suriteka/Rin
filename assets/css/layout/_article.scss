@@ -30,11 +30,30 @@
 
     &__content {
         grid-column: 1 / -1;
-        max-width: 600px;
         margin-top: spacer(3);
+    
 
         @include breakpoint($large) {
             grid-column: 1 / span 1;
+        }
+
+
+        ul li {
+            list-style-type: none;
+            position: relative;
+        
+            &::before {
+                content: '';
+                display: block;
+                height: 5px;
+                width: 5px;
+                border-radius: 5px;
+                background-color: $var-color-primary;
+                position: absolute;
+                left: spacer(-1);
+                top: 0.5em;
+                transition: background-color 5s $easeOutQuart;
+            }
         }
     }
 }

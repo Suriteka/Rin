@@ -4,6 +4,7 @@
     margin-top: spacer(5);
     padding: spacer(2) spacer(2);
     border-top: 1px solid $var-color-primary;
+    transition: border-color 5s $easeOutQuart;
 
     @include breakpoint($large) {
         padding: spacer(2) 100px;
@@ -21,6 +22,7 @@
     &__social {
         display: flex;
         align-content: flex-start;
+        flex-wrap: wrap;
         padding-left: 0;
 
 

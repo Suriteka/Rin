@@ -7,6 +7,7 @@ h1,
 h2,
 .h2 {
   @include h2();
+  margin: spacer(4) 0;
 }
 
 h3,
@@ -49,6 +50,28 @@ date {
   @include p();
   font-size: 16px;
   line-height: 22px;
+}
+
+/* Lists */
+ul, ol {
+  margin-left: 0;
+  padding-left: 0;
+
+  ol, ul {
+    padding-left: spacer(2);
+  }
+
+  li {
+    @include p();
+    margin: spacer() 0;
+  }
+}
+
+/* Links */
+a {
+  color: $var-color-primary;
+  text-decoration: none;
+  transition: color 5s $easeOutQuart;
 }
 
 br {

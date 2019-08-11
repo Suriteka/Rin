@@ -15,6 +15,14 @@
 @import "base/focus";
 @import "base/input";
 
+/* WP Blocks */
+@import "component/wp-blocks/typography";
+@import "component/wp-blocks/separator";
+@import "component/wp-blocks/quote";
+@import "component/wp-blocks/button";
+@import "component/wp-blocks/table";
+
+
 /* Components */
 @import "component/text";
 @import "component/card";
@@ -31,9 +39,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --color-primary: #{$color-primary};
+
+}
+
 body {
   @include grid();
-  --color-primary: $var-color-primary;
   position: relative;
   margin: 0;
   background-color: $black;

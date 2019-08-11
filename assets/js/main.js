@@ -15,9 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     let hsl = rgb2hsl(rgb)
 
     const hslValue = `hsl(${Math.round(hsl[0])}, ${Math.round(hsl[1])}%, ${Math.round(hsl[2])}%)`
-
-    console.log(hslValue)
-    document.body.style.setProperty('--color-primary', hslValue)
+    document.documentElement.style.setProperty('--color-primary', hslValue)
   }
 
   menuCategories.addEventListener('click', () => {
@@ -53,7 +51,7 @@ function rgb2hsl (rgbArr) {
     }
   }
 
-  L = 60
+  L = 62
   S = S * 100
   H = H * 60
   if (H < 0) {

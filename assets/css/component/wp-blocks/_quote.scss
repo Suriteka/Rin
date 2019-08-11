@@ -1,0 +1,22 @@
+.wp-block-quote {
+    position: relative;
+    border: 1px solid $var-color-primary;
+    border-radius: spacer();
+    padding: spacer(2);
+    margin: spacer(3) 0;
+    transition: border-color 5s $easeOutQuart;
+
+    &::before {
+        content: '“';
+        @include h1();
+        display: block;
+        position: absolute;
+        color: $var-color-primary;
+        top: -.5em;
+        transition: color 5s $easeOutQuart;
+    }
+
+    cite {
+        @include p-highlight();
+    }
+}

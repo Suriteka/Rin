@@ -15,6 +15,7 @@
 input[type="text"] {
     @include input-focus();
     color: $var-color-primary;
+    transition: color 5s $easeOutQuart;
 
     &:active,
     &:focus {
