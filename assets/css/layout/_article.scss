@@ -29,6 +29,7 @@
     }
 
     &__content {
+        @include grid();
         grid-column: 1 / -1;
         margin-top: spacer(3);
     
@@ -37,6 +38,10 @@
             grid-column: 1 / span 1;
         }
 
+        > * {
+            max-width: 100%;
+            grid-column: 1 / -1;
+        }
 
         ul li {
             list-style-type: none;
@@ -55,5 +60,17 @@
                 transition: background-color 5s $easeOutQuart;
             }
         }
+
+        p,
+        .wp-block-button,
+        blockquote,
+        hr {
+            grid-column: 1 / span 3;
+        }
+
+        .has-2-columns {
+            grid-column: 1 / span 4;
+        }
     }
+    
 }

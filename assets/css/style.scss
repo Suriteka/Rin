@@ -1,5 +1,6 @@
 /* Imports */
 @import "./../../node_modules/normalize-scss/sass/normalize";
+@include normalize();
 
 /* Base */
 @import "base/color";
@@ -21,6 +22,9 @@
 @import "component/wp-blocks/quote";
 @import "component/wp-blocks/button";
 @import "component/wp-blocks/table";
+@import "component/wp-blocks/image";
+@import "component/wp-blocks/gallery";
+@import "component/wp-blocks/align";
 
 
 /* Components */

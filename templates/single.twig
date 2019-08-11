@@ -6,7 +6,13 @@
 		<h1 class="article__title">{{ post.title }}</h1>
 
 		{% include 'partial/menu.twig' %}
-		
+
+		<span class="article__date">Published the <date>{{ post.date }}</date></span>
+
+		{% if post.modified_date %}
+			<span class="article__date article__date--modified">Last edited the <date>{{ post.modified_date }}</date></span>
+		{% endif %}
+
 		<section class="article__content">
 			{{post.content}}
 		</section>

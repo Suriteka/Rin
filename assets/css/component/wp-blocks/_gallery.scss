@@ -1,0 +1,24 @@
+.wp-block-gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+    @for $i from 1 through 10 {
+        &.columns-#{$i} .blocks-gallery-item {
+            max-width: #{ 100% / $i };
+        }
+    }
+
+    .blocks-gallery-item::before {
+        content: none;
+    }
+
+
+    figure {
+        margin: 0;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}

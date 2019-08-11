@@ -44,8 +44,16 @@ class StarterSite extends Timber\Site {
 		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
 		add_action( 'init', array( $this, 'register_post_types' ) );
 		add_action( 'init', array( $this, 'register_taxonomies' ) );
-        add_filter( 'excerpt_more', array( $this, 'disable_more_link' ) );
+		add_filter( 'excerpt_more', array( $this, 'disable_more_link' ) );
+		
+		add_action( 'wp_print_styles', array( $this, 'gutenberg_deregister_styles' ), 100 );
+
         parent::__construct();
+	}
+
+	/* Remove Gutenberg style */
+	function gutenberg_deregister_styles() {
+		wp_dequeue_style( 'wp-block-library' );
 	}
 
     /** Remove the Read More link in article previews */
