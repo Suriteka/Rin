@@ -6,7 +6,7 @@
 
   @include breakpoint($large) {
     position: fixed;
-    width: 20vw;
+    width: 20%;
     height: 100vh;
     top: 0;
     right: 0;
@@ -121,7 +121,7 @@
   &__item {
     list-style: none;
     margin-bottom: spacer();
-    
+
     a {
       font-size: rem-calc(13);
       line-height: rem-calc(22);

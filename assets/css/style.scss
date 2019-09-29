@@ -54,8 +54,10 @@ body {
   margin: 0;
   background-color: $black;
   color: white;
+  max-width: 100%;
+  overflow-x: hidden;
 
   @include breakpoint($large) {
-    width: 80vw;
+    width: 80%;
   }
 }
