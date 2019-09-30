@@ -38,8 +38,9 @@
         @include breakpoint($large) {
             font-size: rem-calc(12);
             line-height: rem-calc(16);
+            margin-top: spacer(2);
         }
-
+        
         date {
             font-size: inherit;
             line-height: inherit;
